@@ -7,7 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 
-
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,15 +17,31 @@ public class LoginPage {
 	
 	WebDriver driver;
 
-
+	
+	
+	@Before
+	public void setup()
+	{
+	driver =new ChromeDriver();
+	driver.manage().window().maximize();
+	System.out.println("browser setup complete");
+	
+	}
+	
+	@After
+	public void tearDown() { 
+		driver.close();
+		System.out.println("browser closed");
+	}
+	
 	@Given("the user is on home page")
 	public void the_user_is_on_home_page() {
 //	System.setProperty("webdriver.driver.chromedriver", "src/main/resources/chromedriver.exe") ;
 //		As of selenium 4.10.0 the driver manager is fully integrated, and will silently download drivers as needed. (Eg. On Mac/Linux, drivers are automatically downloaded to the ~/.cache/selenium
 		
 		
-	    driver =new ChromeDriver();
-        driver=new FirefoxDriver();
+//	    driver =new ChromeDriver();
+//        driver=new FirefoxDriver();
 	    driver.get("https://www.saucedemo.com/v1/");
 	
 	 
@@ -51,9 +68,6 @@ public class LoginPage {
 		homeMenu.isDisplayed();
 	}
 	
-	@And("close the browser")
-	public void close_the_browser() {
-		driver.close();
-	}
+	
 
 }  

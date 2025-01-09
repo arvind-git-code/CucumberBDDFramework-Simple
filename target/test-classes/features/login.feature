@@ -5,4 +5,4 @@ Feature: test the login page
     When user enter username and password
     And click on submit button
     Then user is able to navigate home page
-		And close the browser
+		
