@@ -1,75 +1,81 @@
 
 
 
-This is a Simple BDD Framework without using any design pattern 
+This is a Simple BDD Framework using cucumber without using any design pattern 
 
+## Steps 
 
-steps 
-1. create maven project in eclipse 
-  File> New > Maven Project
-  Check the text box Create a simple project(skipping the archetype);
-  Group id - user website name i.e. com.arvind1
-  artifact id - project name i.e. CucumberBDDFramework-Simple
-  version - 1.0  the project version as you wish
-  Name - project name i.e. CucumberBDDFramework-Simple
+> 1. create maven project in eclipse
+
+- File> New > Maven Project- Check the text box Create a simple project(skipping the archetype);
+- Group id - user website name i.e. com.arvind1
+- artifact id - project name i.e. CucumberBDDFramework-Simple
+- version - 1.0  the project version as you wish
+- Name - project name i.e. CucumberBDDFramework-Simple
 
 
 2. add 4 main dependencies in pom.xml selenium-java, cucumber-java, cucumber-testng, testng
-     <dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-java</artifactId>
-    <version>4.25.0</version>
-</dependency>
 
-<dependency>
+   ``` <dependency>
+    	<groupId>org.seleniumhq.selenium</groupId>
+    	<artifactId>selenium-java</artifactId>
+    	<version>4.25.0</version>
+	</dependency>
+
+	<dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-java</artifactId>
     <version>7.20.1</version>
-</dependency>
+	</dependency>
 
 
-<dependency>
+	<dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-testng</artifactId>
     <version>7.20.1</version>
-</dependency>
+	</dependency>
 
-<dependency>
+	<dependency>
     <groupId>org.testng</groupId>
-    <artifactId>testng</artifactId>
-    <version>7.10.2</version>
-    <scope>test</scope>
-</dependency>
+   	<artifactId>testng</artifactId>
+    	<version>7.10.2</version>
+    	<scope>test</scope>
+	</dependency>
 
-<!-- get the webdriver by webdriver manager optional but recomented-->
+	<!-- get the webdriver by webdriver manager optional but recomented-->
 
-<dependency>
-        <groupId>io.github.bonigarcia</groupId>
-        <artifactId>webdrivermanager</artifactId>
-        <version>5.5.3</version> </dependency>
+	<dependency>
+   		<groupId>io.github.bonigarcia</groupId>
+       	 	<artifactId>webdrivermanager</artifactId>
+        	<version>5.5.3</version>
+   	</dependency>
         
         
         
         
-<!-- for reporting purpose optional-->
-    <dependency>
-        <groupId>com.aventstack</groupId>
-        <artifactId>extentreports</artifactId>
-        <version>5.1.2</version>
-    </dependency>
+	<!-- for reporting purpose optional-->
+    	<dependency>
+        	<groupId>com.aventstack</groupId>
+        	<artifactId>extentreports</artifactId>
+        	<version>5.1.2</version>
+    	</dependency>
     
-   <dependency>
-    <groupId>tech.grasshopper</groupId>
-    <artifactId>extentreports-cucumber7-adapter</artifactId>
-    <version>1.10.1</version>
-</dependency>
+   	<dependency>
+    	<groupId>tech.grasshopper</groupId>
+    	<artifactId>extentreports-cucumber7-adapter</artifactId>
+    	<version>1.10.1</version>
+	</dependency> ```
 
-if the default jar version is not compatible with the version of selenium then change the version of selenium jar in pom.xml
-    <properties>
+   
+> if the default jar version is not compatible with the version of selenium then change the version of selenium jar in pom.xml
+
+
+
+```  <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.release>17</maven.compiler.release>
   </properties>
-
+```
 3. install cucumber and testng plugin from eclipse market place if not already installed
 
 4. create necessary folders  and packages
@@ -101,6 +107,7 @@ if the default jar version is not compatible with the version of selenium then c
         or you can define method yourself as below
 
 
+```
     package stepDefinition;
 
 import org.openqa.selenium.By;
@@ -161,15 +168,12 @@ public class LoginPage {
 
 }  
     
-
+```
 
 	
-	
+> III. create a package in src/test/java/testrunner - to store runner file 
 
-
-    
-    III. create a package in src/test/java/testrunner - to store runner file 
-    package testRunners;
+```  package testRunners;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
@@ -182,11 +186,12 @@ import io.cucumber.testng.CucumberOptions;
 public class TestRunner extends AbstractTestNGCucumberTests{
 
 }
+```
 
-
-to run 1. right click in runner page and select Run as - Test NG
-		2. right click on the project folder and choose - Run As -> Maven Test
-		3. open terminal at project path -- mvn test
+### to run 
+1. right click in runner page and select Run as - Test NG
+2. right click on the project folder and choose - Run As -> Maven Test
+3. open terminal at project path -- mvn test
 		
 
 
