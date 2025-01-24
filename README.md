@@ -188,23 +188,17 @@ public class TestRunner extends AbstractTestNGCucumberTests{
 }
 ```
 
-### to run 
+### How to run 
 1. right click in runner page and select Run as - Test NG
 2. right click on the project folder and choose - Run As -> Maven Test
 3. open terminal at project path -- mvn test
-		
 
-
-    
-  
-
-
-
-
-
-
-
-Common Mistakes
+> Common Mistakes
 1. after static WebDriver driver;
 again define WebDriver driver =new ChromeDriver(); instead of driver =new new ChromeDriver(); in a method 
 
+## Connect with me
+
+- **Name:** Arvind Kumar
+- **LinkedIn:** [LinkedIn Profile URL](https://www.linkedin.com/in/arvind-kumar-a8b591221/)
+- **Email:** [Email](mailto:arvindkumarlbsmca@gmail.com)
